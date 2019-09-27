@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="100" id="KGk-i7-Jjw" customClass="OpponentMessageTableViewCell" customModule="DemoAppDittoKit" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left_bubble" translatesAutoresizingMaskIntoConstraints="NO" id="y0B-hm-v9D">
+                        <rect key="frame" x="8" y="4" width="43" height="96"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dn5-Ie-pcs">
+                        <rect key="frame" x="32" y="12" width="3" height="76"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Dn5-Ie-pcs" secondAttribute="bottom" constant="12" id="DOi-ib-ls5"/>
+                    <constraint firstItem="y0B-hm-v9D" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Moh-a1-NQQ"/>
+                    <constraint firstItem="y0B-hm-v9D" firstAttribute="bottom" secondItem="Dn5-Ie-pcs" secondAttribute="bottom" constant="12" id="bcb-Qu-LNz"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Dn5-Ie-pcs" secondAttribute="trailing" constant="64" id="c7w-AV-Tav"/>
+                    <constraint firstItem="y0B-hm-v9D" firstAttribute="trailing" secondItem="Dn5-Ie-pcs" secondAttribute="trailing" constant="16" id="cvm-Sv-LpG"/>
+                    <constraint firstItem="y0B-hm-v9D" firstAttribute="top" secondItem="Dn5-Ie-pcs" secondAttribute="top" constant="-8" id="hha-Im-xdg"/>
+                    <constraint firstItem="Dn5-Ie-pcs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="jhI-al-g2s"/>
+                    <constraint firstItem="Dn5-Ie-pcs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="sE3-5V-bec"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bubbleImageView" destination="y0B-hm-v9D" id="fXH-Xz-tMA"/>
+                <outlet property="messageLabel" destination="Dn5-Ie-pcs" id="4CJ-LE-jmK"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="171.42857142857142"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="left_bubble" width="43" height="32"/>
+    </resources>
+</document>
