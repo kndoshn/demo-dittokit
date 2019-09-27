@@ -13,7 +13,9 @@
 		CC117D4F233DF4C500DF9F1F /* MyMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC117D4D233DF4C500DF9F1F /* MyMessageTableViewCell.xib */; };
 		CC117D52233DFF1500DF9F1F /* OpponentMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC117D50233DFF1500DF9F1F /* OpponentMessageTableViewCell.swift */; };
 		CC117D53233DFF1500DF9F1F /* OpponentMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC117D51233DFF1500DF9F1F /* OpponentMessageTableViewCell.xib */; };
-		CC117D55233E2B2900DF9F1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC117D54233E2B2900DF9F1F /* SceneDelegate.swift */; };
+		CC117D57233E3B9A00DF9F1F /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC117D56233E3B9A00DF9F1F /* MessageTableViewCell.swift */; };
+		CC117D59233E534F00DF9F1F /* UIImage+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC117D58233E534F00DF9F1F /* UIImage+Ex.swift */; };
+		CC117D7B233E607600DF9F1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC117D7A233E607600DF9F1F /* SceneDelegate.swift */; };
 		CCA5FA9F233DB0FA00CB1CFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5FA9E233DB0FA00CB1CFC /* AppDelegate.swift */; };
 		CCA5FAA3233DB0FA00CB1CFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5FAA2233DB0FA00CB1CFC /* ViewController.swift */; };
 		CCA5FAA6233DB0FA00CB1CFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCA5FAA4233DB0FA00CB1CFC /* Main.storyboard */; };
@@ -30,7 +32,9 @@
 		CC117D4D233DF4C500DF9F1F /* MyMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyMessageTableViewCell.xib; sourceTree = "<group>"; };
 		CC117D50233DFF1500DF9F1F /* OpponentMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpponentMessageTableViewCell.swift; sourceTree = "<group>"; };
 		CC117D51233DFF1500DF9F1F /* OpponentMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OpponentMessageTableViewCell.xib; sourceTree = "<group>"; };
-		CC117D54233E2B2900DF9F1F /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = ../../../../../.Trash/SceneDelegate.swift; sourceTree = "<group>"; };
+		CC117D56233E3B9A00DF9F1F /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		CC117D58233E534F00DF9F1F /* UIImage+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ex.swift"; sourceTree = "<group>"; };
+		CC117D7A233E607600DF9F1F /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CCA5FA9B233DB0FA00CB1CFC /* DemoAppDittoKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoAppDittoKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCA5FA9E233DB0FA00CB1CFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCA5FAA2233DB0FA00CB1CFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -93,7 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				CCA5FA9E233DB0FA00CB1CFC /* AppDelegate.swift */,
-				CC117D54233E2B2900DF9F1F /* SceneDelegate.swift */,
+				CC117D7A233E607600DF9F1F /* SceneDelegate.swift */,
 				CCA5FAA2233DB0FA00CB1CFC /* ViewController.swift */,
 				CCA5FAA4233DB0FA00CB1CFC /* Main.storyboard */,
 				CCA5FAA7233DB0FB00CB1CFC /* Assets.xcassets */,
@@ -101,10 +105,12 @@
 				CCA5FAAC233DB0FB00CB1CFC /* Info.plist */,
 				CC117D48233DC24500DF9F1F /* MessageInputView.swift */,
 				CC117D4A233DC8F500DF9F1F /* MessageInputView.xib */,
+				CC117D56233E3B9A00DF9F1F /* MessageTableViewCell.swift */,
 				CC117D4C233DF4C500DF9F1F /* MyMessageTableViewCell.swift */,
 				CC117D4D233DF4C500DF9F1F /* MyMessageTableViewCell.xib */,
 				CC117D50233DFF1500DF9F1F /* OpponentMessageTableViewCell.swift */,
 				CC117D51233DFF1500DF9F1F /* OpponentMessageTableViewCell.xib */,
+				CC117D58233E534F00DF9F1F /* UIImage+Ex.swift */,
 			);
 			path = DemoAppDittoKit;
 			sourceTree = "<group>";
@@ -227,12 +233,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC117D57233E3B9A00DF9F1F /* MessageTableViewCell.swift in Sources */,
 				CC117D4E233DF4C500DF9F1F /* MyMessageTableViewCell.swift in Sources */,
 				CCA5FAA3233DB0FA00CB1CFC /* ViewController.swift in Sources */,
 				CC117D52233DFF1500DF9F1F /* OpponentMessageTableViewCell.swift in Sources */,
+				CC117D59233E534F00DF9F1F /* UIImage+Ex.swift in Sources */,
 				CC117D49233DC24500DF9F1F /* MessageInputView.swift in Sources */,
 				CCA5FA9F233DB0FA00CB1CFC /* AppDelegate.swift in Sources */,
-				CC117D55233E2B2900DF9F1F /* SceneDelegate.swift in Sources */,
+				CC117D7B233E607600DF9F1F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,7 +386,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZMU5L9ZH77;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DemoAppDittoKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -397,7 +405,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZMU5L9ZH77;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DemoAppDittoKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -25,23 +25,34 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="edQ-Hf-bbp">
+                        <rect key="frame" x="32" y="12" width="3" height="76"/>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="Dn5-Ie-pcs" secondAttribute="bottom" constant="12" id="DOi-ib-ls5"/>
+                    <constraint firstItem="y0B-hm-v9D" firstAttribute="trailing" secondItem="edQ-Hf-bbp" secondAttribute="trailing" constant="16" id="I4Z-xY-O9p"/>
+                    <constraint firstItem="y0B-hm-v9D" firstAttribute="top" secondItem="edQ-Hf-bbp" secondAttribute="top" constant="-8" id="Ldq-vh-uDO"/>
                     <constraint firstItem="y0B-hm-v9D" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Moh-a1-NQQ"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="edQ-Hf-bbp" secondAttribute="trailing" constant="64" id="PSB-Xs-jwl"/>
+                    <constraint firstItem="y0B-hm-v9D" firstAttribute="bottom" secondItem="edQ-Hf-bbp" secondAttribute="bottom" constant="12" id="UIB-sk-waT"/>
+                    <constraint firstAttribute="bottom" secondItem="edQ-Hf-bbp" secondAttribute="bottom" constant="12" id="W39-gf-hfR"/>
                     <constraint firstItem="y0B-hm-v9D" firstAttribute="bottom" secondItem="Dn5-Ie-pcs" secondAttribute="bottom" constant="12" id="bcb-Qu-LNz"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Dn5-Ie-pcs" secondAttribute="trailing" constant="64" id="c7w-AV-Tav"/>
                     <constraint firstItem="y0B-hm-v9D" firstAttribute="trailing" secondItem="Dn5-Ie-pcs" secondAttribute="trailing" constant="16" id="cvm-Sv-LpG"/>
                     <constraint firstItem="y0B-hm-v9D" firstAttribute="top" secondItem="Dn5-Ie-pcs" secondAttribute="top" constant="-8" id="hha-Im-xdg"/>
                     <constraint firstItem="Dn5-Ie-pcs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="jhI-al-g2s"/>
+                    <constraint firstItem="edQ-Hf-bbp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="qHu-cv-rzH"/>
                     <constraint firstItem="Dn5-Ie-pcs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="sE3-5V-bec"/>
+                    <constraint firstItem="edQ-Hf-bbp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="uxt-Lf-3aE"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="bubbleImageView" destination="y0B-hm-v9D" id="fXH-Xz-tMA"/>
+                <outlet property="imageMessageView" destination="edQ-Hf-bbp" id="3iH-ym-Rf9"/>
                 <outlet property="messageLabel" destination="Dn5-Ie-pcs" id="4CJ-LE-jmK"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="171.42857142857142"/>

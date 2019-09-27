@@ -1,7 +1,7 @@
 import UIKit
 import DittoKit
 
-final class ViewController: UIViewController, UIGestureRecognizerDelegate {
+final class ViewController: UIViewController, UIGestureRecognizerDelegate, UINavigationControllerDelegate {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var messageInputView: MessageInputView!
     @IBOutlet private weak var bottomLayoutConstraint: NSLayoutConstraint!
@@ -21,6 +21,7 @@ final class ViewController: UIViewController, UIGestureRecognizerDelegate {
         startObserveKeyboardNotification()
         addTapGesture()
         messageInputView.sendButton.addTarget(nil, action: #selector(didTapSend), for: .touchUpInside)
+        messageInputView.pictureButton.addTarget(nil, action: #selector(didTapPicture), for: .touchUpInside)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -118,6 +119,13 @@ final class ViewController: UIViewController, UIGestureRecognizerDelegate {
         messageInputView.textField.text = ""
     }
     
+    @objc func didTapPicture() {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = .photoLibrary
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
     var uuidString: String {
         if let stored = UserDefaults.standard.string(forKey: "uuid") {
             return stored
@@ -141,15 +149,54 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let message = messages[indexPath.row]
+        let cell: MessageTableViewCell
         
         if message["uuid"].stringValue == uuidString {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MyMessageTableViewCell", for: indexPath) as! MyMessageTableViewCell
-            cell.messageLabel?.text = messages[indexPath.row]["text"].stringValue
-            return cell
+            cell = tableView.dequeueReusableCell(withIdentifier: "MyMessageTableViewCell", for: indexPath) as! MyMessageTableViewCell
+
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "OpponentMessageTableViewCell", for: indexPath) as! OpponentMessageTableViewCell
-            cell.messageLabel?.text = messages[indexPath.row]["text"].stringValue
-            return cell
+            cell = tableView.dequeueReusableCell(withIdentifier: "OpponentMessageTableViewCell", for: indexPath) as! OpponentMessageTableViewCell
+        }
+        cell.imageMessageView.image = nil
+        cell.messageLabel.text = nil
+        
+        if let value = message.value["image"], let bytes = value as? [UInt8] {
+            let data = Data(bytes: bytes, count: bytes.count)
+            cell.imageMessageView.image = UIImage(data: data)?.resize(targetSize: CGSize(width: 200, height: 200))
+        } else {
+            cell.messageLabel?.text = message["text"].stringValue
+        }
+        
+        return cell
+    }
+}
+
+// MARK: - UIImagePickerControllerDelegate
+extension ViewController: UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[.originalImage] as? UIImage else { return }
+        guard let data = image.pngData() ?? image.jpegData(compressionQuality: 0.5) else { return }
+        dismiss(animated: true)
+        
+        let alert = UIAlertController(title: "Do you want to send the image?", message: nil, preferredStyle: .alert)
+        alert.addAction(
+            UIAlertAction(title: "Cancel", style: .cancel) { _ in
+                self.dismiss(animated: true)
+            }
+        )
+        alert.addAction(
+            UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+                guard let self = self else { return }
+                let dateString = self.dateFormatter.string(from: Date())
+                _ = try! self.collection.insert([
+                    "image": data,
+                    "dateCreated": dateString,
+                    "uuid": self.uuidString
+                ])
+            }
+        )
+        DispatchQueue.main.async {
+            self.present(alert, animated: true)
         }
     }
 }

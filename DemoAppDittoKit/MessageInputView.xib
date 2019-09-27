@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MessageInputView" customModule="DemoAppDittoKit" customModuleProvider="target">
             <connections>
+                <outlet property="pictureButton" destination="d9T-tx-iK4" id="T3i-UM-Gud"/>
                 <outlet property="sendButton" destination="Uoz-0C-iG6" id="gZE-oh-sps"/>
                 <outlet property="textField" destination="iGM-k1-jjV" id="0kX-uj-xoX"/>
             </connections>
@@ -20,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iGM-k1-jjV">
-                    <rect key="frame" x="16" y="8" width="340" height="34"/>
+                    <rect key="frame" x="56" y="8" width="300" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
@@ -31,15 +32,25 @@
                     </constraints>
                     <state key="normal" image="paperplane"/>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9T-tx-iK4">
+                    <rect key="frame" x="16" y="13" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="lZq-xf-eWl"/>
+                        <constraint firstAttribute="width" constant="24" id="na4-mK-DHE"/>
+                    </constraints>
+                    <state key="normal" image="picture"/>
+                </button>
             </subviews>
             <color key="backgroundColor" name="gray09"/>
             <constraints>
+                <constraint firstItem="iGM-k1-jjV" firstAttribute="leading" secondItem="d9T-tx-iK4" secondAttribute="trailing" constant="16" id="2Rq-Q8-b5e"/>
                 <constraint firstItem="Uoz-0C-iG6" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="3mZ-20-rG3"/>
+                <constraint firstItem="d9T-tx-iK4" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="H9X-cp-S2g"/>
                 <constraint firstItem="iGM-k1-jjV" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Jdo-GF-R2G"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Uoz-0C-iG6" secondAttribute="trailing" constant="8" id="Qok-0r-nBW"/>
-                <constraint firstItem="iGM-k1-jjV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="T0L-yc-KdH"/>
                 <constraint firstItem="Uoz-0C-iG6" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="rnH-Em-mx7"/>
                 <constraint firstItem="Uoz-0C-iG6" firstAttribute="leading" secondItem="iGM-k1-jjV" secondAttribute="trailing" id="rsc-Kd-pmb"/>
+                <constraint firstItem="d9T-tx-iK4" firstAttribute="centerY" secondItem="iGM-k1-jjV" secondAttribute="centerY" id="zy6-Wj-VDV"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -48,6 +59,7 @@
     </objects>
     <resources>
         <image name="paperplane" width="500" height="501"/>
+        <image name="picture" width="384" height="384"/>
         <namedColor name="gray09">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

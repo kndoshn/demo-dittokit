@@ -3,6 +3,7 @@ import UIKit
 final class MessageInputView: UIView {
     @IBOutlet private(set) weak var textField: UITextField!
     @IBOutlet private(set) weak var sendButton: UIButton!
+    @IBOutlet private(set) weak var pictureButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

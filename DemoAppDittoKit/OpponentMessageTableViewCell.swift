@@ -1,8 +1,9 @@
 import UIKit
 
-final class OpponentMessageTableViewCell: UITableViewCell {
+final class OpponentMessageTableViewCell: UITableViewCell, MessageTableViewCellType {
     @IBOutlet private(set) weak var messageLabel: UILabel!
     @IBOutlet private weak var bubbleImageView: UIImageView!
+    @IBOutlet private(set) weak var imageMessageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
